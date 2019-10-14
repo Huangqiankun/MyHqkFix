@@ -29,6 +29,7 @@
       }
       
   《3》加载修复包
+  
     1、建议在启动页时，通过后台返回的接口读取最新修复包的下载地址。将这个修复包下载到本地。最后将下载好的修复包通过以下代码调用
     
       MyHqkFixUtil.getInstance().fix(MyApplication.gContext, fileName, dexDir)      
