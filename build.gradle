@@ -5,6 +5,13 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+            url  "https://dl.bintray.com/hqk/MyHqkFix"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -19,9 +26,26 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+            url  "https://dl.bintray.com/hqk/MyHqkFix"
+        }
     }
-}
 
+}
+allprojects {
+    tasks.withType(Javadoc) {
+        options{
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
